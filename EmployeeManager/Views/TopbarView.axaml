@@ -1,23 +1,21 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:vm="using:EmployeeManager.ViewModels"
-             xmlns:models="clr-namespace:EmployeeManager.Models"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:EmployeeManager.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="40"
              x:Class="EmployeeManager.Views.TopbarView"
              x:DataType="vm:TopbarViewModel"
-             Background="#24262d">
+             Background="Transparent"
+             CornerRadius="10">
     
     
     <Design.DataContext>
         <vm:TopbarViewModel/>
     </Design.DataContext>
-
     
     <Grid Height="40"
           ColumnDefinitions="Auto, Auto, *, Auto "
-          Background="Transparent"
           PointerPressed="InputElement_OnPointerPressed"
           PointerMoved="InputElement_OnPointerMoved"
           PointerReleased="InputElement_OnPointerReleased">
@@ -25,7 +23,9 @@
         <!-- Logo -->
         <Border Grid.Column="0"
                 BorderBrush="#969696"
-                BorderThickness="0, 0, 0.5, 0"></Border>
+                BorderThickness="0, 0, 0.5, 0">
+            
+        </Border>
         <Image Grid.Column="0" 
                Source="{SvgImage /Assets/Images/Logo.svg}" 
                HorizontalAlignment="Left" 
@@ -37,10 +37,14 @@
                     VerticalAlignment="Center"
                     Grid.Column="1"
                     Margin="10, 2, 0, 0">
-            <RadioButton Content="Home" Margin="0, 0, 10, 0" IsChecked="True"/>
+            <RadioButton Content="Home" 
+                         Margin="0, 0, 10, 0"
+                         IsChecked="True"
+                         Command="{Binding HomeButtonPressed}"/>
             
-            <RadioButton Content="Database" Margin="0, 0, 10, 0"/>
-            
+            <RadioButton Content="Database" 
+                         Margin="0, 0, 10, 0"
+                         Command="{Binding DatabaseButtonPressed}"/>
         </StackPanel>
                 
         <!-- Functional Buttons -->
@@ -65,5 +69,4 @@
             </Button>
         </StackPanel>
     </Grid>
-    
 </UserControl>

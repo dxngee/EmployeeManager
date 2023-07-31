@@ -2,7 +2,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="EmployeeManager.Views.DatabaseView">
-    Welcome to Avalonia!
+             xmlns:vm="using:EmployeeManager.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="100"
+             x:Class="EmployeeManager.Views.DatabaseView"
+             x:DataType="vm:DatabaseViewModel"
+             Background="Transparent"
+             CornerRadius="10"
+             >
+    <Design.DataContext>
+        <vm:DatabaseViewModel/>
+    </Design.DataContext>
+    
+    <Grid HorizontalAlignment="Center"
+          VerticalAlignment="Center">
+        <TextBlock Text="Its a Database page" Margin="0,0,0,40"/>
+        <Button Content="Press me" Command="{Binding ButtonPressed}"/>
+    </Grid>
 </UserControl>

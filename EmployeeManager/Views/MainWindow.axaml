@@ -7,6 +7,7 @@
         mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="200"
         x:Class="EmployeeManager.Views.MainWindow"
         x:Name="TheMainWindow"
+        x:DataType="vm:MainWindowViewModel"
         ExtendClientAreaToDecorationsHint="True"
         ExtendClientAreaChromeHints="NoChrome"
         Width="1440" Height="900"
@@ -20,15 +21,13 @@
     <Border
         Background ="#24262d"
         CornerRadius="10">
-        <StackPanel>
+        <Grid RowDefinitions="40, *">
             <!-- menu bar -->
             <views:TopbarView/>
             
             <!-- main area -->
-            <Grid>
-                
-            </Grid>
-        </StackPanel>
+            <ContentControl Grid.Row="1" Content="{Binding CurrentView, DataType=vm:TopbarViewModel}"></ContentControl>
+        </Grid>
     </Border>
 
 </Window>

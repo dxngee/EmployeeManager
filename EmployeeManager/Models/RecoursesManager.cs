@@ -4,7 +4,7 @@ using EmployeeManager.ViewModels;
 
 namespace EmployeeManager.Models;
 
-public class WindowsManager
+public class RecoursesManager
 {
     public static List<Window> WindowList = new List<Window>();
 

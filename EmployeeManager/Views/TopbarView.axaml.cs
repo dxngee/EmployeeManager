@@ -6,6 +6,7 @@ using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using EmployeeManager.Models;
 using EmployeeManager.ViewModels;
+using Splat;
 
 namespace EmployeeManager.Views;
 
@@ -13,7 +14,9 @@ public partial class TopbarView : UserControl
 {
     public TopbarView()
     {
-        DataContext = new TopbarViewModel();
+        var topbarViewModel = new TopbarViewModel();
+        ViewModelManager.ViewModelList.Add("TopbarViewModel", topbarViewModel);
+        DataContext = ViewModelManager.ViewModelList.FirstOrDefault(x => x.Key == "TopbarViewModel").Value;
         InitializeComponent();
     }
 
@@ -37,7 +40,7 @@ public partial class TopbarView : UserControl
     {
         if (!_mouseDownForWindowMoving) return;
 
-        var windowsManager = WindowsManager.WindowList;
+        var windowsManager = RecoursesManager.WindowList;
         var currentWindow = windowsManager.FirstOrDefault(x => x.Name == "TheMainWindow");
         
         PointerPoint currentPoint = e.GetCurrentPoint(this);

@@ -56,18 +56,18 @@
                     VerticalAlignment="Center"
                     Margin="0, 0, 5, 0">
                     
-            <Button Classes="FunctionalButton">
+            <Button Classes="FunctionalButton" Command="{Binding MinimiseButtonPressed}">
                 <Image Classes="MinimiseButton"/>
             </Button>
                     
-            <Button Classes="FunctionalButton">
+            <Button Classes="FunctionalButton" Command="{Binding ExpandButtonPressed}">
                 <Panel>
-                    <Image Name="ExpandButton" Classes= "ExpandButton"/>
-                    <Image Name="DisExpandButton" IsVisible="False" Classes="DisExpandButton"/>
+                    <Image Name="ExpandButton" Classes= "ExpandButton" IsVisible="{Binding IsVisible}"/>
+                    <Image Name="DisExpandButton" IsVisible="{Binding !IsVisible}" Classes="DisExpandButton"/>
                 </Panel>
             </Button>
 
-            <Button Classes="FunctionalButton" Command="{Binding DoTheThing}">
+            <Button Classes="FunctionalButton" Command="{Binding CloseButtonPressed}">
                 <Image Classes="CloseButton"/>
             </Button>
         </StackPanel>

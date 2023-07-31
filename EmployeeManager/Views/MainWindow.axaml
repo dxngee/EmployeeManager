@@ -6,11 +6,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="200"
         x:Class="EmployeeManager.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
         x:Name="TheMainWindow"
         ExtendClientAreaToDecorationsHint="True"
         ExtendClientAreaChromeHints="NoChrome"
-        Width="800" Height="400"
+        Width="1440" Height="900"
         Background="Transparent"
         TransparencyBackgroundFallback="Transparent">
 
@@ -27,7 +26,7 @@
             
             <!-- main area -->
             <Grid>
-                <Button Command="{Binding DoTheThing}"> 0 </Button>
+                
             </Grid>
         </StackPanel>
     </Border>

@@ -20,7 +20,7 @@ public class MainWindowViewModel : ViewModelBase
     
     private void RunTheThing()
     {
-        Console.WriteLine("Clocked!");
+        Console.WriteLine("Clicked!");
         
     }
 }

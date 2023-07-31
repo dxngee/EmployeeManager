@@ -5,6 +5,6 @@ namespace EmployeeManager.Models;
 
 public class WindowsManager
 {
-    public static List<Window> AllWindows = new List<Window>();
+    public static List<Window> WindowList = new List<Window>();
 
 }

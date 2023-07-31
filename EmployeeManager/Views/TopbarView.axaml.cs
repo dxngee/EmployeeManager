@@ -37,7 +37,7 @@ public partial class TopbarView : UserControl
     {
         if (!_mouseDownForWindowMoving) return;
 
-        var windowsManager = WindowsManager.AllWindows;
+        var windowsManager = WindowsManager.WindowList;
         var currentWindow = windowsManager.FirstOrDefault(x => x.Name == "TheMainWindow");
         
         PointerPoint currentPoint = e.GetCurrentPoint(this);

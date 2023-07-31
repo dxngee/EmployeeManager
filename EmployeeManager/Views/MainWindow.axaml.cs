@@ -17,18 +17,14 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         DataContext = new MainWindowViewModel();
-
         InitializeComponent();
-        WindowsManager.AllWindows.Add(this);
-
-        
+        WindowsManager.WindowList.Add(this);
     }
     
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
     }
-
     
     private void MinimiseButton_OnClick(object? sender, RoutedEventArgs e)
     {

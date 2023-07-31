@@ -1,0 +1,76 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:EmployeeManager.ViewModels"
+             xmlns:models="clr-namespace:EmployeeManager.Models"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="40"
+             x:Class="EmployeeManager.Views.TopbarView"
+             x:DataType="vm:TopbarViewModel"
+             Background="#24262d">
+    
+    
+    <Design.DataContext>
+        <vm:TopbarViewModel/>
+    </Design.DataContext>
+
+    
+    <Grid Height="40"
+          ColumnDefinitions="Auto, Auto, *, Auto "
+          Background="Transparent"
+          PointerPressed="InputElement_OnPointerPressed"
+          PointerMoved="InputElement_OnPointerMoved"
+          PointerReleased="InputElement_OnPointerReleased">
+        
+        <!-- Logo -->
+        <Border Grid.Column="0"
+                BorderBrush="#969696"
+                BorderThickness="0, 0, 0.5, 0"></Border>
+        <Image Grid.Column="0" 
+               Source="{SvgImage /Assets/Images/Logo.svg}" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Bottom" 
+               Margin="10, 2.5, 10, 2.5"/>
+                
+        <!-- Menu Buttons -->
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    Grid.Column="1"
+                    Margin="10, 2, 0, 0">
+                    
+            <Button Foreground="#fff"
+                    FontSize="16"
+                    Margin="0, 0, 10, 0">
+                <TextBlock Text="Home"/>
+            </Button>
+
+            <Button Foreground="#969696"
+                    FontSize="16">
+                <TextBlock Text="DataBase"/>
+            </Button>
+        </StackPanel>
+                
+        <!-- Functional Buttons -->
+        <StackPanel Grid.Column="3"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    Margin="0, 0, 5, 0">
+                    
+            <Button Classes="FunctionalButton">
+                <Image Classes="MinimiseButton"/>
+            </Button>
+                    
+            <Button Classes="FunctionalButton">
+                <Panel>
+                    <Image Name="ExpandButton" Classes= "ExpandButton"/>
+                    <Image Name="DisExpandButton" IsVisible="False" Classes="DisExpandButton"/>
+                </Panel>
+            </Button>
+
+            <Button Classes="FunctionalButton" Command="{Binding DoTheThing}">
+                <Image Classes="CloseButton"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+    
+</UserControl>

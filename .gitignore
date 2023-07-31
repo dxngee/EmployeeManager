@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+bin
+obj
+.avalonia-build-tasks
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates

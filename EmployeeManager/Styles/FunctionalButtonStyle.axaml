@@ -1,0 +1,30 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style Selector="Button.FunctionalButton">
+        <Setter Property="Margin" Value="0, 0, 5, 0"/>
+    </Style>
+    
+    <Style Selector="Button.FunctionalButton Image">
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="Source" Value="{SvgImage ../Assets/Images/EmptyButton.svg}"/>
+    </Style>
+    
+    <Style Selector="Button.FunctionalButton:pointerover Image.CloseButton">
+        <Setter Property="Source" Value="{SvgImage ../Assets/Images/CloseButton.svg}"/>
+    </Style>
+    
+    <Style Selector="Button.FunctionalButton:pointerover Image.ExpandButton">
+        <Setter Property="Source" Value="{SvgImage ../Assets/Images/ExpandButton.svg}"/>
+    </Style>
+    
+    <Style Selector="Button.FunctionalButton:pointerover Image.DisExpandButton">
+        <Setter Property="Source" Value="{SvgImage ../Assets/Images/DisExpandButton.svg}"/>
+    </Style>
+    
+    <Style Selector="Button.FunctionalButton:pointerover Image.MinimiseButton">
+        <Setter Property="Source" Value="{SvgImage ../Assets/Images/MinimiseButton.svg}"/>
+    </Style>
+    
+</Styles>

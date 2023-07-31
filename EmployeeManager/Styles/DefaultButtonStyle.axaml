@@ -15,4 +15,30 @@
         <Setter Property="Background" Value="Transparent" />
     </Style>
     
+    <Style Selector="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid Background="{TemplateBinding Background}">
+                        <TextBlock 
+                            Text="{TemplateBinding Content}"
+                            Foreground="{TemplateBinding Foreground}"
+                            FontSize="16"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="#969696"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+    
+    <Style Selector="RadioButton:pointerover">
+        <Setter Property="Foreground" Value="#fff"/>
+    </Style>
+    
+    <Style Selector="RadioButton:checked">
+        <Setter Property="Foreground" Value="#fff"/>
+    </Style>
+    
+    
 </Styles>

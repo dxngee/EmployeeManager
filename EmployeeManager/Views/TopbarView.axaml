@@ -37,17 +37,10 @@
                     VerticalAlignment="Center"
                     Grid.Column="1"
                     Margin="10, 2, 0, 0">
-                    
-            <Button Foreground="#fff"
-                    FontSize="16"
-                    Margin="0, 0, 10, 0">
-                <TextBlock Text="Home"/>
-            </Button>
-
-            <Button Foreground="#969696"
-                    FontSize="16">
-                <TextBlock Text="DataBase"/>
-            </Button>
+            <RadioButton Content="Home" Margin="0, 0, 10, 0" IsChecked="True"/>
+            
+            <RadioButton Content="Database" Margin="0, 0, 10, 0"/>
+            
         </StackPanel>
                 
         <!-- Functional Buttons -->
